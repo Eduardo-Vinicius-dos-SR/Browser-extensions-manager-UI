@@ -1,0 +1,92 @@
+body.dark {
+	background: var(--Dark-Gradient);
+}
+
+body.dark .container .header {
+	background-color: var(--Neutral-800);
+}
+
+body.dark .container .header .logo.dark {
+	display: block;
+}
+body.dark .container .header .logo.light {
+	display: none;
+}
+body.dark .container .header .btn-theme::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+body.dark .container .header .btn-theme:hover::after {
+	display: inline-block;
+	background-color: hsla(200, 60%, 99%, 0.3);
+}
+
+body.dark .container .header .btn-theme.light {
+	display: none;
+}
+body.dark .container .header .btn-theme.dark {
+	display: flex;
+}
+
+body.dark .container .header .btn-theme {
+	background-color: var(--Neutral-700);
+}
+
+body.dark .extensions-list .extensions-header h1 {
+	color: var(--Neutral-0);
+}
+
+body.dark .extensions-header .options button {
+	background-color: var(--Neutral-700);
+	color: var(--Neutral-0);
+}
+body.dark .extensions-header .options button.selected {
+	background-color: var(--Red-400);
+	color: var(--Neutral-900);
+}
+body.dark .extensions-header .options button.selected:hover {
+	background-color: var(--Red-500);
+}
+
+body.dark .extensions-list .extensions .extension {
+	border-color: 1px solid var(--Neutral-600);
+	background-color: var(--Neutral-800);
+}
+
+body.dark .extension .extension-data h2 {
+	color: var(--Neutral-0);
+}
+
+body.dark .extension .extension-data p {
+	color: var(--Neutral-300);
+}
+
+body.dark .extension .extension-options button {
+	color: var(--Neutral-0);
+	border: 1px solid var(--Neutral-600);
+}
+body.dark .extension .extension-options button:hover {
+	background-color: var(--Red-400);
+	color: var(--Neutral-900);
+}
+
+body.dark .slider {
+	background-color: var(--Neutral-600);
+}
+
+body.dark input:checked + .slider {
+	background-color: var(--Red-400);
+}
+body.dark input:checked:hover + .slider {
+	background-color: var(--Red-700);
+}
+
+body.dark .allRemoved {
+	color: var(--Neutral-0);
+}

@@ -1,0 +1,170 @@
+@media (max-width: 500px) {
+	body .container {
+		padding: 30px 0 65px;
+	}
+
+	.container .header .btn-theme {
+		padding: 15px;
+	}
+
+	.extensions-list .extensions-header {
+		flex-direction: column;
+		align-items: center;
+		gap: 30px;
+		margin-bottom: 50px;
+	}
+
+	.extensions-list .extensions-header h1 {
+		font-size: 3rem;
+	}
+
+	.extensions-header .options button {
+		border-radius: 30px;
+		padding: 12px 20px;
+		font-size: 2rem;
+	}
+
+	.container .extensions-list .extensions {
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	}
+}
+
+@media (min-width: 1920px) {
+	body {
+		padding: 0 2vw;
+	}
+
+	body .container {
+		max-width: 75vw;
+		padding: 2.5vw 0;
+	}
+
+	body .container .header {
+		margin-bottom: 3.5vw;
+		border-radius: 2vw;
+		padding: 1vw;
+	}
+
+	.container .header .logo {
+		width: 12vw;
+	}
+
+	.container .header .btn-theme {
+		height: 100%;
+		border-radius: 1vw;
+		padding: 1vw;
+	}
+	html body.dark .container .header .btn-theme::after {
+		border-radius: 1.1vw;
+	}
+
+	.container .header .btn-theme img {
+		width: 1.4vw;
+	}
+
+	.extensions-list .extensions-header {
+		margin-bottom: 2vw;
+	}
+
+	.extensions-list .extensions-header h1 {
+		font-size: 2vw;
+	}
+
+	.extensions-list .extensions-header .options {
+		gap: 0.75vw;
+	}
+
+	.extensions-header .options button {
+		border-radius: 2vw;
+		padding: 0.75vw 1vw;
+		font-size: 1.3vw;
+	}
+	.extensions-header .options button::after {
+		border-radius: 1.25vw;
+	}
+
+	.container .extensions-list .extensions {
+		grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+		gap: 1vw;
+	}
+
+	.extensions-list .extensions .extension {
+		min-height: 13vw;
+		border-radius: 1vw;
+		padding: 1.2vw;
+		padding-bottom: 1.2vw;
+		box-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.1);
+	}
+
+	.extensions .extension .extension-data {
+		gap: 1.1vw;
+		margin-bottom: 2.5vw;
+	}
+
+	.extensions .extension .extension-data img {
+		width: 4vw;
+	}
+
+	.extension .extension-data h2 {
+		margin-bottom: 0.4vw;
+		font-size: 1.4vw;
+	}
+
+	.extension .extension-data p {
+		font-size: 1.2vw;
+	}
+
+	.extension .extension-options button {
+		border: 0.2vw solid var(--Neutral-300);
+		border-radius: 2vw;
+		padding: 0.8vw 1.1vw;
+		font-size: 1.2vw;
+	}
+
+	/* switch */
+
+	.toggle-switch {
+		width: 3.5vw;
+		height: 1.75vw;
+		border-radius: 2vw;
+	}
+
+	.slider {
+		border-radius: 2vw;
+	}
+
+	.slider:before {
+		height: 1.5vw;
+		width: 1.5vw;
+		left: 0.2vw;
+		bottom: 0.15vw;
+	}
+
+	input:checked + .slider:before {
+		transform: translateX(1.6vw);
+	}
+
+	/* Focus */
+
+	body .container .btn-theme:focus-visible,
+	body .container .extensions-header .options button:focus-visible,
+	body .container .extension .extension-options button:focus-visible,
+	body .container .toggle-switch:focus-visible {
+		outline: 0.2vw solid var(--Red-500) !important;
+		border: none !important;
+	}
+
+	body.light .container .extensions-header .options button.selected:focus-visible {
+		outline: 0.2vw solid var(--Neutral-900) !important;
+	}
+	body.dark .container .extensions-header .options button.selected:focus-visible {
+		outline: 0.2vw solid var(--Neutral-0) !important;
+	}
+
+	body.light .toggle-switch:focus-within input:checked + .slider {
+		outline: 0.2vw solid var(--Neutral-900) !important;
+	}
+	body.dark .toggle-switch:focus-within input:checked + .slider {
+		outline: 0.2vw solid var(--Neutral-0) !important;
+	}
+}

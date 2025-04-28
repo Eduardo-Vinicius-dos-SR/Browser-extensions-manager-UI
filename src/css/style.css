@@ -1,0 +1,230 @@
+@font-face {
+	font-family: "Noto Sans";
+	src: url("../assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf") format("truetype"),
+		url("../assets/fonts/static/NotoSans-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	min-height: 100dvh;
+}
+
+body {
+	font-family: "Noto Sans", sans-serif;
+	height: 100%;
+	padding: 0 20px;
+}
+
+body .container {
+	min-height: 100%;
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+body .container .header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 50px;
+	border-radius: 15px;
+	padding: 12px;
+}
+
+.container .header .btn-theme {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+body .container .extensions-list {
+	width: 100%;
+}
+
+.extensions-list .extensions-header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.extensions-list .extensions-header h1 {
+	font-size: 2.5rem;
+}
+
+.extensions-list .extensions-header .options {
+	display: flex;
+	gap: 10px;
+}
+
+.extensions-header .options button {
+	position: relative;
+	border: none;
+	border-radius: 25px;
+	padding: 10px 15px;
+	font-size: 1.6rem;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+.extensions-header .options button::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 25px;
+}
+.extensions-header .options button:hover::after {
+	display: inline-block;
+	background-color: hsla(200, 60%, 99%, 0.3);
+}
+.extensions-header .options button.selected:hover::after {
+	display: none;
+}
+
+.container .extensions-list .extensions {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 15px;
+	transition: 0.3s ease-in-out;
+}
+
+.extensions-list .extensions .extension {
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 15px;
+	padding: 15px;
+	padding-bottom: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	order: 1;
+}
+.extensions-list .extensions.active .extension.active {
+	order: 1;
+}
+.extensions-list .extensions.active .extension {
+	order: 2;
+}
+
+.extensions-list .extensions.inactive .extension {
+	order: 1;
+}
+.extensions-list .extensions.inactive .extension.active {
+	order: 2;
+}
+.extensions-list .extensions .extension.removed {
+	display: none;
+}
+
+.extensions .extension .extension-data {
+	display: flex;
+	gap: 15px;
+	margin-bottom: 40px;
+}
+
+.extension .extension-data img {
+	margin-bottom: auto;
+}
+
+.extension .extension-data h2 {
+	margin-bottom: 5px;
+	font-size: 2rem;
+}
+
+.extension .extension-data p {
+	font-size: 1.6rem;
+}
+
+.extensions .extension .extension-options {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.extension .extension-options button {
+	border: 1px solid var(--Neutral-300);
+	border-radius: 25px;
+	padding: 10px 15px;
+	background: none;
+	font-size: 1.4rem;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+/* switch */
+
+.toggle-switch {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 25px;
+	border-radius: 25px;
+}
+
+.toggle-switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: 0.4s;
+	border-radius: 25px;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 19px;
+	width: 19px;
+	left: 3px;
+	bottom: 3px;
+	background-color: var(--Neutral-0);
+	transition: 0.4s;
+	border-radius: 50%;
+}
+
+input:checked + .slider:before {
+	transform: translateX(25px);
+}
+
+/* Focus */
+
+body .container .btn-theme:focus-visible,
+body .container .extensions-header .options button:focus-visible,
+body .container .extension .extension-options button:focus-visible,
+body .container .toggle-switch:focus-visible {
+	outline: 2px solid var(--Red-500) !important;
+	border: none !important;
+}
+
+body.light .container .extensions-header .options button.selected:focus-visible {
+	outline: 2px solid var(--Neutral-900) !important;
+}
+body.dark .container .extensions-header .options button.selected:focus-visible {
+	outline: 2px solid var(--Neutral-0) !important;
+}
+
+body.light .toggle-switch:focus-within input:checked + .slider {
+	outline: 2px solid var(--Neutral-900) !important;
+}
+body.dark .toggle-switch:focus-within input:checked + .slider {
+	outline: 2px solid var(--Neutral-0) !important;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="icon" type="image/png" sizes="32x32" href="./src/assets/images/favicon-32x32.png" />
+
+		<title>Frontend Mentor | Browser extensions manager UI</title>
+
+		<link rel="stylesheet" href="./src/css/index.css" />
+	</head>
+	<body class="light">
+		<section class="container">
+			<header class="header">
+				<img src="./src/assets/images/light-logo.svg" alt="Logo" class="logo light" />
+				<img src="./src/assets/images/dark-logo.svg" alt="Logo" class="logo dark" />
+
+				<button class="btn-theme light">
+					<img src="./src/assets/images/icon-moon.svg" alt="Moon theme icon" />
+				</button>
+				<button class="btn-theme dark">
+					<img src="./src/assets/images/icon-sun.svg" alt="Sun theme icon" />
+				</button>
+			</header>
+			<main class="extensions-list">
+				<header class="extensions-header">
+					<h1>Extensions List</h1>
+					<div class="options">
+						<button class="selected">All</button>
+						<button>Active</button>
+						<button>Inactive</button>
+					</div>
+				</header>
+				<ul class="extensions" id="extensions"></ul>
+			</main>
+		</section>
+
+		<script type="module" src="./src/js/index.js"></script>
+	</body>
+</html>
