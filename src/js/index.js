@@ -3,7 +3,7 @@ import { handleExtensionsEvents } from "./services/extensions-events.js";
 import { changeList, changeTheme } from "./services/prefer.js";
 
 function jsonFormater() {
-	fetch("../../data.json")
+	fetch("./json/data.json")
 		.then((response) => {
 			if (!response.ok) {
 				throw new Error("Erro ao carregar o arquivo JSON");
