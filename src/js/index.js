@@ -12,24 +12,30 @@ function jsonFormater() {
 		})
 		.then((api) => {
 			api.forEach((extension) => {
-				extensions.innerHTML += `
-         <li class="extension">
-			<div class="extension-data">
-				<img src="${extension.logo}" alt="${extension.name} logo" />
-				<div>
-					<h2>${extension.name}</h2>
-					<p>${extension.description}</p>
-				</div>
-			</div>
-			<div class="extension-options">
-				<button>Remove</button
-				><label class="toggle-switch" tabindex="0">
-					<input type="checkbox" />
-					<span class="slider"></span>
-				</label>
-			</div>
-		</li>
+				const isActive = extension.isActive;
+				const activeClass = isActive ? " active" : "";
+				const checkedAttribute = isActive ? " checked" : "";
+
+				const extensionHTML = `
+					<li class="extension${activeClass}">
+						<div class="extension-data">
+							<img src="${extension.logo}" alt="${extension.name} logo" />
+							<div>
+								<h2>${extension.name}</h2>
+								<p>${extension.description}</p>
+							</div>
+						</div>
+						<div class="extension-options">
+							<button>Remove</button
+							><label class="toggle-switch" tabindex="0">
+								<input type="checkbox"${checkedAttribute} />
+								<span class="slider"></span>
+							</label>
+						</div>
+					</li>
          `;
+
+				extensions.innerHTML += extensionHTML;
 			});
 			handleExtensionsEvents();
 		})
